@@ -15,3 +15,17 @@ executes:
 ```
 $ find <folder> -type f -newermt <dt_from> ! -newermt <dt_to>
 ```
+
+# set-alias
+
+## Description
+
+A set of handy bash aliases. The script generates a file with the aliases and add the call on the .bashrc file.
+
+## Usage
+
+```
+$ ./set-alias.sh
+```
+
+You need to execute it just one time. After the command been executed, check your .bashrc file.
