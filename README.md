@@ -13,5 +13,5 @@ $ ./find-by-date <folder> <dt_from> <dt_to>
 executes:
 
 ```
-$ $(which find) <folder> -type f -newermt <dt_from> ! -newermt <dt_to>
+$ find <folder> -type f -newermt <dt_from> ! -newermt <dt_to>
 ```
