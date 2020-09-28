@@ -1,0 +1,11 @@
+#!/bin/sh
+
+if [ "$#" -ne 3 ] ; then
+    echo 'Usage: ./find-by-date <folder> <dt_from> <dt_to>'
+    echo ''
+    exit 1
+fi
+
+$(which find) $1 -type f -newermt $2 ! -newermt $3 
+
+exit 0
