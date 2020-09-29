@@ -8,26 +8,29 @@ create_alias_file() {
     fi
 
 cat <<EOF > ~/.bash_alias_ext
-    unalias ll
+    alias ll && unalias ll
     alias ll='ls -alhF'
 
-    unalias cd..
+    alias cd.. && unalias cd..
     alias cd..='cd ..'
 
-    unalias ..
+    alias .. && unalias ..
     alias ..='cd ..'
 
-    unalias now
+    alias now && unalias now
     alias now='date'
 
-    unalias ping
+    alias ping && unalias ping
     alias ping='ping -c 5'
 
-    unalias ports
+    alias ports && unalias ports
     alias ports='netstat -tulanp'
 
-    unalias meminfo
+    alias meminfo && unalias meminfo
     alias meminfo='free -mlth'
+
+    alias jdk-version && unalias jdk-version
+    alias jdk-version='sudo update-alternatives --config java'
 EOF
 # EOF needs to be here at far left!
 

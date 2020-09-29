@@ -10,7 +10,7 @@ List files within specific folder which have been modified between two dates.'
 $ ./find-by-date <folder> <dt_from> <dt_to>
 ```
 
-executes:
+## What it does
 
 ```
 $ find <folder> -type f -newermt <dt_from> ! -newermt <dt_to>
@@ -29,3 +29,4 @@ $ ./set-alias.sh
 ```
 
 You need to execute it just one time. After the command been executed, check your .bashrc file.
+
