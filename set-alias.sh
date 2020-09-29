@@ -11,6 +11,9 @@ cat <<EOF > ~/.bash_alias_ext
     alias ll && unalias ll
     alias ll='ls -alhF'
 
+    alias lh && unalias lh
+    alias lh='ls -alhF'
+
     alias cd.. && unalias cd..
     alias cd..='cd ..'
 
@@ -39,12 +42,14 @@ EOF
 # End of create_alias_file
 ############################################
 
+
+# Function call
+create_alias_file
+
+
 if [ -f ~/.bashrc ]; then
     # backup
     cp ~/.bashrc ~/.bashrc_pre-alias
-
-    # Function call
-    create_alias_file
 
     # finding and removing previous set
     sed -i '/bash_alias_ext/d' ~/.bashrc
@@ -53,4 +58,18 @@ if [ -f ~/.bashrc ]; then
     echo '\nsource ~/.bash_alias_ext' >> ~/.bashrc
 
     echo "Close and reopen terminal to changes take effect (or source .bashrc)"
+fi
+
+if [ -f ~/.zshrc ]; then
+    
+    # backup
+    cp ~/.zshrc ~/.zshrc_pre-alias
+
+    # finding and removing previous set
+    sed -i '/bash_alias_ext/d' ~/.zshrc
+
+    # adding new set
+    echo '\nsource ~/.bash_alias_ext' >> ~/.zshrc
+
+    echo "Close and reopen terminal to changes take effect (or source .zshrc)"
 fi
